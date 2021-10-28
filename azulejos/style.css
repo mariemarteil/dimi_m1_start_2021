@@ -1,4 +1,3 @@
-
 body, body * {
   margin: 0;
   box-sizing: border-box;
@@ -15,19 +14,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center ;
-  background-color: #eee;
+  background-color: #ccc;
   min-height: 100vh;
 }
 
 main#grid {
   width: calc(var(--grid-col) * var(--tile-size));
   height: calc(var(--grid-row) * var(--tile-size));
-  border: solid red 80px;
+  border: solid red 40px;
   box-sizing: content-box;
 }
 
 div.tile {
-  position: absolute
+  position: absolute;
   width: var(--tile-size);
   height: var(--tile-size);
   background-color: white;
