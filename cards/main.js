@@ -1,13 +1,34 @@
+
 const getRandomClassName = () => {
   const r = Math.random()
-  if (r < 0.2){
+  // 20% de chance de retourner la carte "silver" //
+  if (r <= 0.2){
     return 'silver'
   }
+  // 10% de chance de retourner la carte "gold" //
   if (r < 0.3){
     return 'gold'
   }
+  // dans tous les autres cas, renvoyer //
   return 'normal'
 }
+
+const getRandomEmoji = () => {
+  const r = Math.random()
+  // carte "gold" //
+  if (r <= 0.2) {
+    return '💁🏼‍♀️'
+  }
+
+  // carte "silver" //
+  if (r < 0.3){
+    return '🔮'
+  }
+
+  // dans tous les autres cas, renvoyer //
+  return '🍏'
+}
+
 const clone = (source) => {
   const clone = source.cloneNode(true)
   document.body.append(clone)
@@ -19,12 +40,11 @@ const clone = (source) => {
   const angle = Math.round(Math.random() * 60 - 30)
   clone.style.transform = `rotate(${angle}deg)`
 
-
 const randomClass = getRandomClassName()
 clone.className = `card ${randomClass}`
 
 clone.querySelector ('div').innerHTML = getRandomEmoji()
-
+}
 
 const cloneOnClick = (event) => {
   // console.log(event.currentTarget)
