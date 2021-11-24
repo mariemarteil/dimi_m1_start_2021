@@ -1,12 +1,20 @@
-import { setPixel } from './utils/canvas.js'
-// import './ant.js'
+import { resizeCanvas } from './utils/canvas.js'
+import * as ant from './ant.js'
 
-const width = 32
-const height = 32
+resizeCanvas(32, 32)
 
-const canvas = document.querySelector('canvas')
-canvas.width = width
-canvas.height = height
+let paused = true
 
-setPixel(10, 10, 'red')
-import('./ant.js')
+const loop = () => {
+  requestAnimationFrame(true)
+  if (paused === false) {
+    ant.move()
+  }
+}
+
+loop()
+
+
+document.querySelector('button#move').onclick = () => {
+  ant.move()
+}
